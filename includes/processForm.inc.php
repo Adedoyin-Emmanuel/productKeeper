@@ -1,3 +1,4 @@
+
 <?php
 
 #get the form values from their respective class
@@ -7,8 +8,12 @@ $product_img=$_FILES['productImg'];
 
 #connection to the database
 require_once "conn.inc.php";
+
 #get the controllers
 require_once '../controllers/productController.controller.php';
+
+#get the error handler
+require_once '../models/errorHandlers.model.php';
 
 #create a new product model
 $product = new Product($product_name,$product_description,$product_img);
@@ -16,6 +21,11 @@ $product = new Product($product_name,$product_description,$product_img);
 #create a new array to store the errors
 $errors = array();
 $error_to_user = '';
+
+#create a new error handler
+
+$error_handler = new ErrorHandler();
+
 
 #check if any args are empty
 if($product->args_empty() == true){
@@ -30,14 +40,17 @@ $file_success = $product->handle_file();
 if($file_success != true AND empty($errors)){
 	$errors[0] = $file_success;
 	$error_to_user = $errors[0];
-	echo $error_to_user;
+	$error_handler->set_error($error_to_user);
+	echo $error_handler->error;
+	
 	die();
 	#array_push($errors,$file_success);
 }else if($file_success == 0 AND !empty($errors)){
 	#do nothing
 	$errors[0] =$file_success;
 	$error_to_user = $errors[0];
-	echo $error_to_user;
+	$error_handler->set_error($error_to_user);
+	echo $error_handler->error;
 
 	die();
 }
@@ -56,15 +69,19 @@ $file_transfer_status = $product->upload_file_permanent();
 if(!$file_transfer_status){
 	$errors[0] = "An error occured with file upload";
 	$error_to_user = $errors[0];
-	echo $error_to_user;
-
+	$error_handler->set_error($error_to_user);
+	echo $error_handler->error;
+	
 	die();
 }else{
-	echo "file upload successful";
+	
 	#since file upload was successful, we can insert the data in our DB
 
-	#insert the properties into the connection mode
-	$connectionModel->insert_record($legit_product_name,$legit_product_desc,$legit_product_img);
+	#insert the properties into the connection model
+	$insert_data = $connectionModel->insert_record($legit_product_name,$legit_product_desc,$legit_product_img);
+	echo $insert_data;
+
+
 
 }
 

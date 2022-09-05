@@ -16,8 +16,8 @@ $(document).ready(($)=>{
 			
 			xhttp.onreadystatechange=()	=>{
 					if(xhttp.readyState == 4 && xhttp.status==200){
-						console.log(xhttp.responseText);
-						
+						//get the alert div with jquery
+						$("#error_alert").html(xhttp.responseText);
 					}
 
 				}

@@ -17,8 +17,8 @@
 	</div>
 		<form class="form p-5 bg-dark rounded-3 shadow-lg m-auto" method="post" action="" id="form" autocomplete="off">
 			<h4 class="fs-4 text-center text-capitalize py-2">add product</h4>
-			<div class="text-light fw-2 text-center d-flex align-items-center justify-content-center m-auto rounded-3 p-2" id="alert" style="background: tomato;">
-				*This is an error message*
+			<div class="text-light fw-2 text-center d-flex align-items-center justify-content-center m-auto rounded-3 p-2" id="error_alert" style="background: tomato;">
+				<!-- *This is an error message* -->
 			</div>
 			<div class="form-group my-4">
 				<label for="productName" class="text-capitalize py-2">product name</label>

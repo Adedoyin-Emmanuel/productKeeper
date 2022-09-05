@@ -85,7 +85,7 @@ class Product{
 		#rename the file
 		$this->randomNumber=rand(0,10000000);
 		$this->randomTime=time();
-		$this->processed_file_name=$this->randomNumber.$is->thrandomTime.'.'.$this->legit_upload_file_ext;
+		$this->processed_file_name=$this->randomNumber.$this->randomTime.'.'.$this->legit_upload_file_ext;
 		$this->target_file_dir=$this->upload_dir.$this->processed_file_name;
 		#check if there was an error uploading the file
 		if($this->upload_file_error != 0){
@@ -118,14 +118,14 @@ class Product{
 	#create a method to upload the file permanently
 	public function upload_file_permanent(){
 		if($this->file_match_success === true){
-					#move the picture to the folder on the server
-					#check if there was an error
-					if(move_uploaded_file($this->upload_tmp_name,$this->target_file_dir)){
-						return true;
-					}else{
-						return false;
-					}
-				}
+			#move the picture to the folder on the server
+			#check if there was an error
+			if(move_uploaded_file($this->upload_tmp_name,$this->target_file_dir)){
+				return true;
+			}else{
+				return false;
+			}
+		}
 	}
 	#create a method to get the product name
 	public function get_product_name(){
