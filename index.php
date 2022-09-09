@@ -1,21 +1,38 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<?php require_once "includes/component.inc.php"?>
-	<title>Product Application</title>
-</head>
-<body class="container-fluid p-0">
-	<div class="container-lg p-3">
-			<h3 class="fs-3 py-3">All Products</h3>
-			<div class="all-products" id="product_table">
-				<div class="alert alert-danger text-center text-capitalize">no products available</div>
-			</div>
 
-			<!-- add new product  -->
-			<div class="add_new_product">
-				<button class="btn btn-primary text-capitalize text-center"><a href="addProduct.php" class="text-decoration-none text-light text-capitalize">add new product</a></button>
-			</div>
+	<?php require_once "includes/style.inc.php"?>
+	<?php require_once "includes/style.inc.php"?>
+
+
+	<script src="includes/searchDbase.inc.js"></script>
+	<script src="includes/manageSpinner.inc.js"></script>
+	<title>ProKeep</title>
+</head>
+
+<body class="container-fluid p-0 d-flex align-items-center justify-content-center m-auto flex-column" id="body">
+
+	<h4 class="text-capitalize text-center my-5 p-5">welcome to prokeep</h4>
+	<div class="splash_screen my-4 d-flex align-items-center p-3 justify-content-center" >
+	<div class="dot-pulse text-danger d-none" id="pulseSpinner">
+		
 	</div>
-	<?php require_once "includes/footer.inc.php"?>
+		<img src="shopCart.png" class="img-fluid" height="60" width="60" id="cartImg">
+
+	</div>
+	<button class="text-capitalize text-center btn btn-danger my-5 " id="getStarted">
+		<span class="spinner-border spinner-border-sm d-none" id="btnSpinner"></span>
+	get started</button>
+
 </body>
 </html>
+<?php 
+
+
+
+
+
+?>

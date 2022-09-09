@@ -5,7 +5,7 @@
 
 #create a product model that would be instanciated
 
-class Product{
+class ProductController{
 	#init the class properties
 	private $product_name;
 	private $product_desc;

@@ -5,12 +5,23 @@
 		<script src="components/jquery.js"></script>
 		<script src="components/bootstrap.js"></script>
 		<link rel="stylesheet" type="text/css" href="components/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="components/msgConfig.css">
+		<link rel="stylesheet" type="text/css" href="components/three-dots.css">
 		<style>
 
 
+			@font-face {
+			    font-family: newFont;
+			    src: url(components/poppins.ttf);
+			}
 			body{
-				background: #121212;
+				background: #121117;
 				color:white;
+				
+			}
+
+			*{
+				font-family: newFont;
 			}
 
 		 ::-webkit-scrollbar{
@@ -23,7 +34,7 @@
 		  ::-webkit-scrollbar-thumb{
 		    border-radius:20px;
 		    opacity:.7;
-		    background:white;
+		    background: #dc3545;
 		    width:2px;
 		  }
 

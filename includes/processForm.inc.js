@@ -17,7 +17,36 @@ $(document).ready(($)=>{
 			xhttp.onreadystatechange=()	=>{
 					if(xhttp.readyState == 4 && xhttp.status==200){
 						//get the alert div with jquery
-						$("#error_alert").html(xhttp.responseText);
+						$("#error_alert").removeClass("d-none");
+						$("#error_alert").addClass("d-flex");
+						$("#error_alert").text(xhttp.responseText);
+
+						//check for successful msg
+						if(xhttp.responseText.includes("successfully")){
+							$("#error_alert").css({"background":"green"});
+							//clear the form
+							swal.fire({
+								title:"Product Added",
+								text:"Product added successfully",
+								icon:"success",
+								allowOutsideClick:false,
+								confirmButtonText:"View Product",
+								showCancelButton:true,
+								cancelButtonText:"Add Product"
+
+							}).then((willProceed)=>{
+								if(willProceed.isConfirmed){
+									location.href="homePage.php";
+								}else{
+									location.reload();
+								}
+								if(willProceed.isCancelled){
+									location.reload();
+								}
+							});
+						}else{
+							$("#error_alert").css({"background":"tomato"});
+						}
 					}
 
 				}

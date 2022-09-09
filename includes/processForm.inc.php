@@ -16,7 +16,7 @@ require_once '../controllers/productController.controller.php';
 require_once '../models/errorHandlers.model.php';
 
 #create a new product model
-$product = new Product($product_name,$product_description,$product_img);
+$product = new ProductController($product_name,$product_description,$product_img);
 
 #create a new array to store the errors
 $errors = array();
@@ -67,8 +67,8 @@ $file_transfer_status = $product->upload_file_permanent();
 
 #check if there was an error
 if(!$file_transfer_status){
-	$errors[0] = "An error occured with file upload";
-	$error_to_user = $errors[0];
+	$errors[0] = "*File upload error, use (pngs, jpg, jpeg, gif)*";
+	$error_to_user = $errors[0]; 
 	$error_handler->set_error($error_to_user);
 	echo $error_handler->error;
 	
@@ -78,8 +78,23 @@ if(!$file_transfer_status){
 	#since file upload was successful, we can insert the data in our DB
 
 	#insert the properties into the connection model
-	$insert_data = $connectionModel->insert_record($legit_product_name,$legit_product_desc,$legit_product_img);
-	echo $insert_data;
+	if(!empty($legit_product_name) AND !empty($legit_product_desc) AND !empty($legit_product_img)){
+			$insert_data = $connectionModel->insert_record($legit_product_name,$legit_product_desc,$legit_product_img);
+
+		if($insert_data){
+			echo "*Record inserted successfully*";
+
+			die();
+			#redirect the user
+		}else{
+			echo $insert_data;
+			die();
+		}
+	}else{
+		die("*Please fill in necessary fields*");
+	}
+	
+	
 
 
 
