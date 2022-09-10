@@ -32,12 +32,15 @@ $(document).ready(($)=>{
 		$btnSpinner.removeClass("d-none");
 		$pulseSpinner.removeClass("d-none");
 		$cartImg.addClass("d-none");
+
+
+		
+		setTimeout(()=>{
+			//take the user to the index page after some random time
+			location.href = "homePage.php";
+		},$randomNumber);
 	});
 
 
 
-	setTimeout(()=>{
-		//take the user to the index page after some random time
-		location.href = "homePage.php";
-	},$randomNumber);
 });

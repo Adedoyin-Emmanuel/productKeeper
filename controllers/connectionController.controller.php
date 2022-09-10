@@ -105,36 +105,45 @@ class ConnectionModel extends ProductController{
 				#check if the query returned 0 search results
 				if($this->query_result->num_rows > 0){
 					
-					while($this->data_row = $this->query_result->fetch_array()){
-						#create a new array to push dbase items
-						$this->result_array = array(
-							"product_name" => $this->data_row["product_name"],
-							"product_desc" => $this->data_row["product_desc"],
-							"product_img"  => $this->data_row["product_img"] ,
-							"date_added"   => $this->data_row["date_added"]
+					// while($this->data_row = $this->query_result->fetch_array()){
+					// 	#create a new array to push dbase items
+					// 	// $this->result_array = array(
+					// 	// 	"product_name" => $this->data_row["product_name"],
+					// 	// 	"product_desc" => $this->data_row["product_desc"],
+					// 	// 	"product_img"  => $this->data_row["product_img"] ,
+					// 	// 	"date_added"   => $this->data_row["date_added"]
 
-						);
+					// 	// );
 
-						$this->legit_result = array();
+					// 	// $this->legit_result = array();
 
-						#push the dbase row data into the result data array
+					// 	#push the dbase row data into the result data array
 						
 						
-						// array_push($this->result_array,$this->data_row["product_name"]);
-						// array_push($this->result_array,$this->data_row["product_desc"]);
-						// array_push($this->result_array,$this->data_row["product_img"]);
-						// array_push($this->result_array,$this->data_row["date_added"]);
+					// 	// array_push($this->result_array,$this->data_row["product_name"]);
+					// 	// array_push($this->result_array,$this->data_row["product_desc"]);
+					// 	// array_push($this->result_array,$this->data_row["product_img"]);
+					// 	// array_push($this->result_array,$this->data_row["date_added"]);
 
-						array_push($this->legit_result, $this->result_array);
+					// 	// array_push($this->legit_result, $this->result_array);
+					
+						
+					// 	// for ($i=0; $i < count($this->legit_result); $i++) { 
+
+					// 	// 		//$this->legit_result[$i];
+
+					// 	// 	return count($this->legit_result);
+
+					// 	// }
 
 						
-						for ($i=0; $i < count($this->legit_result); $i++) { 
 
-							print_r($this->legit_result[$i]);
+					// }
 
-						}
 
-					}
+					// while ($this->data_row = $this->query_result->fetch_assoc()) {
+					// 	print_r($this->data_row);	
+					// }
 
 
 

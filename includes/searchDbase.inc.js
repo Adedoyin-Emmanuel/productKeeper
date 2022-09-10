@@ -35,42 +35,57 @@ $(document).ready(($)=>{
 			  		const $dataContainer = $("#product_search_data");
 			  		let $data_template;
 			  		let $legit_object_from_server;
-			  		let $test_array = [];
 			  		var $object_from_server  = xhttp.responseText;
+			  		var $array = [$object_from_server];
 
-			  		console.log($object_from_server);
-			  		return;
-			  		for (var i = 0; i < $object_from_server.length; i++) {
-			  				$test_array.push(i);
-			  				console.log($test_array.length);
-			  		}
+			  		for (var i =0; i < $array.length; i++) {
 
-			  		return;
+			  // 			try{
+			  // 				console.log($array[i]);
+					// $legit_object_from_server = JSON.parse($array[i]);
+					// console.log($legit_object_from_server);
 
-			  		try{
+			  // 			}catch(e){
 
-					 $legit_object_from_server = JSON.parse($object_from_server);
+			  // 				console.log(e);
+			  // 			}
 
-					 var $pushed_object = [];
 
-					 $pushed_object.push($legit_object_from_server);
-			  		}catch(err){
-			  			$data_template = randomString($searchErrors);
-			  			$dataContainer.html(`<h6 class='text-capitalize text-center fs-6 text-danger'>${$data_template}</h6>`);
+			  // console.log(typeof $array[0]);
+			  // return;
 
-			  			return;
+					
+			  console.log($array);
 
-			  		}
+			  return;
+				  			
+				  		try{
+				  		 var $trimmedString = $array[i].trim();
+						 $legit_object_from_server = JSON.parse($trimmedString);
+
+						
+
+				  		}catch(err){
+				  			$data_template = randomString($searchErrors);
+				  			console.log(err);
+				  			$dataContainer.html(`<h6 class='text-capitalize text-center fs-6 text-danger'>${$data_template}</h6>`);
+
+				  			return;
+
+				  		}
+
+
+				  		console.log($legit_object_from_server[i]);
+
 
 			  		//constant for the max string to be displayed
-			  		const $max_string = 13;
+			  		const $MAX_STRING = 13;
+
 			  		//check if the product name length is too long, then strip it
 
-			  		var $product_name_length = $legit_object_from_server.product_name.length;
-			  		var $legit_product_name = $legit_object_from_server.product_name.substring(0,$max_string) + "...";
+			  		var $product_name_length = $legit_object_from_server[i].product_name.length;
+			  		var $legit_product_name = $legit_object_from_server[i].product_name.substring(0,$MAX_STRING) + "...";
 
-
-			  		console.log($pushed_object.length);
 
 			  		$data_template =`		
 					  		<div class="product_container container-lg my-2">
@@ -78,14 +93,14 @@ $(document).ready(($)=>{
 							<div class="product_1 bg-dark text-light rounded-3 shadow-sm p-2" >
 								<!-- product image and text -->
 								<div class="product_image d-flex flex-row flex-wrap justify-items-around align-items-center">
-									<img src="images/${$legit_object_from_server.product_img}" class="rounded-circle" width="40" height="40">
+									<img src="images/${$legit_object_from_server[i].product_img}" class="rounded-circle" width="40" height="40">
 										<!-- product text -->
 									<div class="product_test text-capitalize m-auto ">
 										<p class="text-capitalize m-auto text-center">${$legit_product_name}</p>
 									</div>
 
 										<div class="time_added d-flex">
-											<p class="d-block p-2">${$legit_object_from_server.date_added}</p>
+											<p class="d-block p-2">${$legit_object_from_server[i].date_added}</p>
 										</div>
 
 									
@@ -95,7 +110,13 @@ $(document).ready(($)=>{
 									</div>
 							</div>
 					`;
-					$dataContainer.html($data_template);
+					$dataContainer.innerHTML += $data_template;
+
+					}
+
+
+				
+			  		
 
 					
 			  	}

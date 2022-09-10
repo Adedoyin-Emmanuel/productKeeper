@@ -16,30 +16,31 @@ $data_to_user = @$connectionModel->fetch_records_using_search($legit_data);
 
 #ecode the data as a javascript object
 if($data_to_user == "Server returned 0 result" OR $data_to_user == "args can't be empty"){
-	echo "nonesense data";
+	die();
 }else{
 
-
-	// foreach ($data_to_user as $data => $val) {
-
-	// 	echo json_encode($data_to_user[$data]);
+ 
+	#call the connection model to access the connection model properties
+	if($connectionModel->query_result->num_rows > 0){
+		while($rows = $connectionModel->query_result->fetch_assoc()){
+			#convert the result to an object and send it to the view ie(javascript)
 		
-	// }
+			// for ($i=0; $i < $connectionModel->query_result->num_rows; $i++) { 
+			// 		$data = json_encode($rows[$i]);
 
-	// for ($i=0; $i < count($data_to_user); $i++) { 
-	// 	echo json_encode($data_to_user[$i]);
-	// }
+			// 		echo $data;
 
-
-	foreach ($data_to_user as $data => $val) {
-		// print($data_to_user);
-		$test = $data_to_user;
+			// }
 
 
-		json_encode($test);
+			foreach ($rows as $row => $val) {
+				$data = json_encode($rows) .",";
 
-
-		print($test);
+					echo $data;
+			}
+		}
+	}else{
+		echo "Server returned 0 result";
 	}
 
 }

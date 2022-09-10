@@ -68,7 +68,7 @@
 				<div class="product_container container-lg my-">
 
 		
-					<div class="product_1 bg-dark text-light rounded-3 shadow-sm p-2">
+					<div class="product_1 bg-dark  text-light rounded-3 shadow-sm p-2">
 						<!-- product image and text -->
 						<div class="product_image d-flex flex-row flex-wrap justify-items-around align-items-center">
 							<img src="rocket_3.jpg" class="rounded-circle" width="40" height="40">
