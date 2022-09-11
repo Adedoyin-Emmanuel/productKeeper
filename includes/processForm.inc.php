@@ -81,12 +81,11 @@ if(!$file_transfer_status){
 	if(!empty($legit_product_name) AND !empty($legit_product_desc) AND !empty($legit_product_img)){
 			$insert_data = $connectionModel->insert_record($legit_product_name,$legit_product_desc,$legit_product_img);
 
-		if($insert_data){
+		if($connectionModel->conn->query($connectionModel->sql) == TRUE){
 			echo "*Record inserted successfully*";
-
 			die();
 			#redirect the user
-		}else{
+		}else{ 	
 			echo $insert_data;
 			die();
 		}

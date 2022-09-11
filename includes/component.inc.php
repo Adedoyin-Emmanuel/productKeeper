@@ -10,19 +10,19 @@
 		<style>
 
 
-			@font-face {
-			    font-family: newFont;
-			    src: url(components/poppins.ttf);
-			}
-			body{
-				background: #121117;
-				color:white;
-				
-			}
+		@font-face {
+		    font-family: newFont;
+		    src: url(components/poppins.ttf);
+		}
+		body{
+			background: #121117;
+			color:white;
+			
+		}
 
-			*{
-				font-family: newFont;
-			}
+		*{
+			font-family: newFont;
+		}
 
 		 ::-webkit-scrollbar{
 		    width:5px;

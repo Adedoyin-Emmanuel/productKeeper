@@ -1,5 +1,25 @@
 <style>
 
+
+			@font-face {
+			    font-family: newFont;
+			    src: url(components/poppins.ttf);
+			}
+			body{
+				background: #121117;
+				color:white;
+				
+			}
+
+			*{
+				font-family: newFont;
+			}
+
+
+			.product_1{
+				cursor: pointer;
+			}
+
 			.form{
 
 			}

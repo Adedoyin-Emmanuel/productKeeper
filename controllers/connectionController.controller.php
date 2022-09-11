@@ -62,7 +62,7 @@ class ConnectionModel extends ProductController{
 		$this->product_name_record =mysqli_real_escape_string($this->conn,$product_name);
 		$this->product_desc_record =mysqli_real_escape_string($this->conn,$product_desc);
 		$this->product_img_record  =mysqli_real_escape_string($this->conn,$product_img);
-		$this->current_date        = date("Y-m-d");
+		$this->current_date        = date("d-m-Y");
 
 		if(empty($this->product_name_record) OR empty($this->product_desc_record) OR empty($this->product_img_record)){
 			return "*All fields must be complete";
@@ -73,7 +73,8 @@ class ConnectionModel extends ProductController{
 
 			#check if there was an error 
 			if($this->conn->query($this->sql) == TRUE){
-				return TRUE;
+
+				die();
 			}else{
 				return '*Error, record not inserted*'.$this->conn->error;
 			}
@@ -91,67 +92,32 @@ class ConnectionModel extends ProductController{
 		#pass
 	}
 
+	#create a method to trim a string and return  substring
+	public function trim_string($haystack,$needle){
+
+		$this->haystack = $haystack;
+		$this->needle   = $needle;
+
+
+		#the trim index is assumed as 0.
+
+		return substr($this->haystack, 0, $this->needle);
+	}
+
 	#create a method to fetch records using the search 
 	public function fetch_records_using_search($args){
 		#here args is the search data that the user passed through
 		if(!empty($args)){
 			$this->search_data = $args;
 			$search_data_legit =$this->search_data;
-			$this->get_search_sql =@"SELECT * FROM products_table WHERE product_name LIKE '$search_data_legit%'";
+			$this->get_search_sql =@"SELECT DISTINCT ID,product_name, product_desc, product_desc, product_img, date_added FROM products_table WHERE product_name LIKE '$search_data_legit%'";
 		
 			$this->query_result = $this->conn->query($this->get_search_sql);
 				#check if the query was successful
 			if($this->query_result == TRUE){
 				#check if the query returned 0 search results
 				if($this->query_result->num_rows > 0){
-					
-					// while($this->data_row = $this->query_result->fetch_array()){
-					// 	#create a new array to push dbase items
-					// 	// $this->result_array = array(
-					// 	// 	"product_name" => $this->data_row["product_name"],
-					// 	// 	"product_desc" => $this->data_row["product_desc"],
-					// 	// 	"product_img"  => $this->data_row["product_img"] ,
-					// 	// 	"date_added"   => $this->data_row["date_added"]
-
-					// 	// );
-
-					// 	// $this->legit_result = array();
-
-					// 	#push the dbase row data into the result data array
-						
-						
-					// 	// array_push($this->result_array,$this->data_row["product_name"]);
-					// 	// array_push($this->result_array,$this->data_row["product_desc"]);
-					// 	// array_push($this->result_array,$this->data_row["product_img"]);
-					// 	// array_push($this->result_array,$this->data_row["date_added"]);
-
-					// 	// array_push($this->legit_result, $this->result_array);
-					
-						
-					// 	// for ($i=0; $i < count($this->legit_result); $i++) { 
-
-					// 	// 		//$this->legit_result[$i];
-
-					// 	// 	return count($this->legit_result);
-
-					// 	// }
-
-						
-
-					// }
-
-
-					// while ($this->data_row = $this->query_result->fetch_assoc()) {
-					// 	print_r($this->data_row);	
-					// }
-
-
-
-
-
-					
-
-					
+					#pass
 				}else{
 					/*
 						check if the dbase actually returns some set of rows according to the user's search
@@ -169,6 +135,38 @@ class ConnectionModel extends ProductController{
 		}
 
 	}
+
+
+	#create a public method to get all data from the database
+
+	public function get_all_data_from_database(){
+
+		#prepare the query to get all records
+		$this->get_all_data_query = "SELECT * FROM products_table ORDER BY product_name, date_added ASC";
+
+		#run query
+
+
+		$this->get_all_data_query_result = $this->conn->query($this->get_all_data_query);
+
+		#check if nothing went wrong
+		if($this->get_all_data_query_result == TRUE){
+				#check if the query returned 0 search results
+				if($this->get_all_data_query_result->num_rows > 0){
+					#pass
+				}else{
+
+					/*
+						check if the dbase actually returns some set of rows according to the user's search
+						#return $this->get_all_data_query_result->num_rows;
+					*/
+					
+					return "Server returned 0 result";
+
+					
+				}
+		}
+	}	
 }
 
 ?>
