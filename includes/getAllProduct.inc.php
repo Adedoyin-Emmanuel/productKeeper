@@ -33,7 +33,7 @@ if($data_from_database == "Server returned 0 result" OR $data_from_database == "
 			}
 			
 			$data = '
-			<a href="" class="text-decoration-none text-light">
+			<a href="viewSingleProduct.php?p_ID='.$rows["ID"].'" class="text-decoration-none text-light" >
 			<div class="product_container container-lg my-2">
 
 							<div class="product_1 bg-dark text-light rounded-3 shadow-sm p-2" >

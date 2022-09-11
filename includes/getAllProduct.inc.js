@@ -7,7 +7,7 @@ $(document).ready(($)=>{
 	//custom error array
 	let $searchErrors = [
 		
-		"*no products available* 😢",
+		"*no products available*",
 		
 	];
 
@@ -55,7 +55,7 @@ $(document).ready(($)=>{
 
 				  			`);
 
-				  		$("#warning_alert").removeClass("d-none");
+				  		//$("#warning_alert").removeClass("d-none");
 				  		
 				  		return;
 					}else{

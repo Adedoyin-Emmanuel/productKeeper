@@ -9,6 +9,7 @@
 
 	<!-- inject the scripts -->
 	<script src="includes/getAllProduct.inc.js"></script>
+	
 	<title>Product Application</title>
 </head>
 

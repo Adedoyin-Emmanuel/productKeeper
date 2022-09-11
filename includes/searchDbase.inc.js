@@ -66,7 +66,7 @@ $(document).ready(($)=>{
 						//get the string from the server
 
 						$parentDataDiv.html(xhttp.responseText);
-						console.log(xhttp.responseText);
+						
 					}
 					
 				}	

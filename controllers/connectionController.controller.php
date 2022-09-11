@@ -166,7 +166,45 @@ class ConnectionModel extends ProductController{
 					
 				}
 		}
-	}	
+	}
+
+
+
+
+
+	#create a method to fetch records using the id 
+	public function fetch_records_using_id($id){
+		#here args is the id passed through
+		if(!empty($id)){
+			$this->id = $this->custom_input_sanitizer($id);
+			$temp_id = $this->id;
+			
+			$this->get_record_sql =@"SELECT * FROM products_table WHERE ID ='$temp_id'";
+		
+			$this->record_result = $this->conn->query($this->get_record_sql);
+				#check if the query was successful
+			if($this->record_result== TRUE){
+				#check if the query returned 0 search results
+				if($this->record_result->num_rows > 0){
+					#pass
+				}else{
+					/*
+						check if the dbase actually returns some set of rows according to the user's search
+						#return $this->record_result->num_rows;
+					*/
+					
+					return "Server returned 0 result";
+
+					
+				}
+			}
+		}else{
+			return "args can't be empty";
+
+		}
+
+	}
+	
 }
 
 ?>
