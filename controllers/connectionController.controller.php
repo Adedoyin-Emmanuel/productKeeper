@@ -169,6 +169,36 @@ class ConnectionModel extends ProductController{
 	}
 
 
+	#product deletion method
+
+
+	public function delete_product($args){
+		#args is the product ID
+		if(empty($args)){
+			die("args can not be empty");
+		}else{
+			$this->product_deletion_id = $args;
+			$temp_product_deletion_id = $this->product_deletion_id;
+			$this->product_delete_sql = "DELETE FROM products_table WHERE ID = '$temp_product_deletion_id'";
+
+			#run query
+
+			$this->query_to_delete = $this->conn->query($this->product_delete_sql);
+
+			#check if query ran well
+			if($this->query_to_delete == TRUE){
+
+				#query successful
+				return true ;
+
+			}else{
+				#query error
+				return false.$this->conn->error;
+			}
+		}
+	}
+
+
 
 
 
@@ -183,7 +213,7 @@ class ConnectionModel extends ProductController{
 		
 			$this->record_result = $this->conn->query($this->get_record_sql);
 				#check if the query was successful
-			if($this->record_result== TRUE){
+			if($this->record_result == TRUE){
 				#check if the query returned 0 search results
 				if($this->record_result->num_rows > 0){
 					#pass

@@ -38,9 +38,13 @@
 
 	$product_id = @htmlspecialchars($_GET["p_ID"]);
 
+	#create a new connection mode;
+	$connectionModel2= new ConnectionModel();
+
+
 
 	if(isset($product_id)){
-		$_SESSION["product_ID"] = $product_id;	
+		$_SESSION["product_ID"] = $connectionModel2->custom_input_sanitizer($product_id);		
 
 
 	}else{
@@ -48,10 +52,6 @@
 
 	}
 
-
-
-	#create a new connection mode;
-	$connectionModel2= new ConnectionModel();
 
 
 	#get the product information
