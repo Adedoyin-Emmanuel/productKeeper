@@ -25,10 +25,12 @@ class ConnectionModel extends ProductController{
 			parent::__construct($product_name,$product_desc,$product_img);
 		*/
 
-		$this->server_name = 'containers-us-west-27.railway.appt';
+		$this->server_name = 'containers-us-west-19.railway.app';
 		$this->user_name = 'root';
-		$this->password = 'IB5awX5sydMSvqdbeA2a';
+		$this->password = 'CqkuWbuZkgqn81SbHqjx';
 		$this->database = 'railway';
+		$this->port	= '7201';
+		$this->socket 	= 'TCP';
 		
 		#use try catch
 		try {
