@@ -27,11 +27,11 @@ class ConnectionModel extends ProductController{
 
 		$this->server_name = 'containers-us-west-19.railway.app';
 		$this->user_name = 'root';
-		$this->password = 'CqkuWbuZkgqn81SbHqjx';
+		$this->password = 'pIB5awX5sydMSvqdbeA2a';
 		$this->database = 'railway';
-		$this->port	= '7201';
+		$this->port	= '6127';
 		$this->socket 	= 'TCP';
-		
+	
 		#use try catch
 		try {
 			#init the connection property
