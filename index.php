@@ -8,6 +8,7 @@
 	<?php require_once "includes/style.inc.php"?>
 
 
+
 	<script src="includes/searchDbase.inc.js"></script>
 	<script src="includes/manageSpinner.inc.js"></script>
 	<title>ProKeep</title>

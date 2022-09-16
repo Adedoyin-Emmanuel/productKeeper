@@ -1,12 +1,16 @@
 		<meta charset="UTF-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		 <meta name="author" content="Adedoyin Emmanuel Adeniyi">
+		 <meta name="keyword" content="A product keeping application developed by Adedoyin Emmanuel Adeniyi"/>
+		 <meta name="keyword" content="productkeeper, full stack application, php, php project, php programming, bootstrap project"/>
 		<script src="components/sweetAlert2.js"></script>
 		<script src="components/jquery.js"></script>
 		<script src="components/bootstrap.js"></script>
 		<link rel="stylesheet" type="text/css" href="components/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="components/msgConfig.css">
 		<link rel="stylesheet" type="text/css" href="components/three-dots.css">
+		<link rel="icon" href="shopCart.png">
 		<style>
 
 
