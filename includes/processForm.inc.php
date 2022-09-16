@@ -67,7 +67,7 @@ $file_transfer_status = $product->upload_file_permanent();
 
 #check if there was an error
 if(!$file_transfer_status){
-	$errors[0] = "*File upload error, use (pngs, jpg, jpeg, gif)*";
+	$errors[0] = "*File upload error*".$file_transfer_status;
 	$error_to_user = $errors[0]; 
 	$error_handler->set_error($error_to_user);
 	echo $error_handler->error;

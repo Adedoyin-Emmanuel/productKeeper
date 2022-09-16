@@ -123,7 +123,7 @@ class ProductController{
 			if(move_uploaded_file($this->upload_tmp_name,$this->target_file_dir)){
 				return true;
 			}else{
-				return false;
+				return false.$this->conn->error;
 			}
 		}
 	}
