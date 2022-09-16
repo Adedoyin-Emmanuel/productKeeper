@@ -63,7 +63,7 @@ $legit_product_img  = $product->get_product_img();
 
 
 #transfer the file to the permanent location on the server
-$product->upload_file_permanent()
+#$product->upload_file_permanent();
 
 #check if there was an error
 
