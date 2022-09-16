@@ -15,7 +15,10 @@
 <?php require_once "includes/logo.inc.php";?>
 <!-- container div bootstrap class -->
 	<div class="container-fluid d-flex">
-		
+		<div  id="spinner" class="">
+		<div class="dot-pulse text-danger"></div>
+
+	</div>
 
 		<div class="container-lg m-auto my-1" id="main_container">
 		

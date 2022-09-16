@@ -25,13 +25,11 @@ class ConnectionModel extends ProductController{
 			parent::__construct($product_name,$product_desc,$product_img);
 		*/
 
-		$this->server_name = 'containers-us-west-19.railway.app';
+		$this->server_name = 'localhost';
 		$this->user_name = 'root';
-		$this->password = 'pIB5awX5sydMSvqdbeA2a';
-		$this->database = 'railway';
-		$this->port	= '6127';
-		$this->socket 	= 'TCP';
-	
+		$this->password = '';
+		$this->database = 'crud_app';
+		
 		#use try catch
 		try {
 			#init the connection property
@@ -76,7 +74,7 @@ class ConnectionModel extends ProductController{
 			#check if there was an error 
 			if($this->conn->query($this->sql) == TRUE){
 
-				die();
+				die("Product added successfully");
 			}else{
 				return '*Error, record not inserted*'.$this->conn->error;
 			}
@@ -202,6 +200,34 @@ class ConnectionModel extends ProductController{
 
 
 
+	#create a method to update the records using the id
+	public function update_record($product_name,$product_desc,$product_img,$id){
+		#check if the args are empty
+		$this->update_product_id = mysqli_real_escape_string($this->conn,$id);
+		$this->product_name_record_update =mysqli_real_escape_string($this->conn,$product_name);
+		$this->product_desc_record_update =mysqli_real_escape_string($this->conn,$product_desc);
+		$this->product_img_record_update  =mysqli_real_escape_string($this->conn,$product_img);
+		$this->current_date        = date("d-m-Y");
+
+		if(empty($this->product_name_record_update) OR empty($this->product_desc_record_update) OR empty($this->product_img_record_update)){
+			return "*All fields must be complete";
+			die();
+		}else{
+			#inset the values into the DB
+			$this->update_product_sql ="UPDATE products_table SET product_name = '$this->product_name_record_update', product_desc = '$this->product_desc_record_update', product_img = '$this->product_img_record_update' WHERE ID = '$this->update_product_id' ";
+
+
+			$this->update_query_result = $this->conn->query($this->update_product_sql);
+			#check if there was an error 
+			if($this->update_query_result == TRUE){
+
+				die("Product updated successfully");
+			}else{
+				return '*Error, record not inserted*'.$this->conn->error;
+			}
+
+		}
+	}
 
 
 	#create a method to fetch records using the id 

@@ -22,7 +22,7 @@ $(document).ready(($)=>{
 						$("#error_alert").text(xhttp.responseText);
 
 						//check for successful msg
-						if(xhttp.responseText.includes("successfully") || xhttp.responseText == ""){
+						if(xhttp.responseText.includes("successfully") || xhttp.responseText == " "){
 							$("#error_alert").css({"background":"green"});
 							//clear the form
 							swal.fire({

@@ -15,7 +15,7 @@
 
 		<button class="btn btn-secondary text-capitalize fw-2 my-3"><a href="homePage.php" class="text-decoration-none text-light " >&lt;&lt; back</a></button>
 	</div>
-		<form class=" p-5 bg-dark rounded-3  m-auto" method="post" action="" id="form" autocomplete="off">
+		<form class=" p-5 bg-dark rounded-3  m-auto" method="post" action="" id="form" autocomplete="off" enctype="multipart/form-data">
 			<h4 class="fs-4 text-center text-capitalize py-2">add product ⚡</h4>
 			<div class="text-light fw-2 text-center d-flex align-items-center justify-content-center m-auto rounded-3 p-2 d-none" id="error_alert" style="background: tomato; ">
 				<!-- *This is an error message* -->

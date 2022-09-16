@@ -24,11 +24,11 @@ $(document).ready(($)=>{
 						$("#error_alert").text(xhttp.responseText);
 
 						//check for successful msg
-						if(xhttp.responseText.includes("successfully") || xhttp.responseText == ""){
+						if(xhttp.responseText.includes("successfully")){
 							$("#error_alert").css({"background":"green"});
 							//clear the form
 							swal.fire({
-								title:"Product Added",
+								title:"Product updated",
 								text:"Product updated successfully",
 								icon:"success",
 								allowOutsideClick:false,
@@ -47,7 +47,7 @@ $(document).ready(($)=>{
 								}
 							});
 						}else{
-							$("#error_alert").css({"background":"tomato"});
+							//$("#error_alert").css({"background":"tomato"});
 						}
 					}
 

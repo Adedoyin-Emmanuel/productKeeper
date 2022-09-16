@@ -10,20 +10,27 @@
 	<!-- inject the scripts -->
 	<script src="includes/getAllProduct.inc.js"></script>
 	
-	<title>Product Application</title>
+	<title>ProKeep</title>
+
+
 </head>
 
 <body class="container-fluid p-0" id="body">
+
+	<div  id="spinner" class="">
+		<div class="dot-pulse text-danger"></div>
+
+	</div>
 		<?php require_once "includes/logo.inc.php";?>
 
-	<div class="container-lg p-3 form">
+	<div class="container-lg p-3 form ">
 		
 			<h3 class="fs-2 py-4 text-danger text-center my-4" id="allProduct">All Products</h3>
 
 
 			<div class="all-products  m-auto" id="product_table">
 				<div class="alert   text-center text-capitalize my-3 text-warning d-none" style="border: none" id="warning_alert">no
-				products available 😢</div>
+				products available </div>
 
 		
 				<div class="search_products my-4 ">

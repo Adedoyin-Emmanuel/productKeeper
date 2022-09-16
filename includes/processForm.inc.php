@@ -1,6 +1,6 @@
 
 <?php
-
+error_reporting(0);
 #get the form values from their respective class
 $product_name = $_POST['productName'];
 $product_description=$_POST['productDesc'];

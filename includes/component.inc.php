@@ -56,5 +56,26 @@
 	      
 	      background-color:#343a40;
 	    }
+
+	    #spinner{
+				background: #121117;
+				height: 100vh;
+				width: 100%;
+				position: fixed;
+				z-index: 100;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
 	</style>
+
+	<script>
+		
+		window.addEventListener("load",()=>{
+			let $spinner = $("#spinner");
+				$spinner.addClass("d-none");
+		});	
+
+	</script>
 

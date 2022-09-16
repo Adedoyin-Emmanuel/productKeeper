@@ -5,7 +5,16 @@
 	<title>Delete Product</title>
 </head>
 <body id="body">
+	<div class="container-fluid">
+		
 
+			<div  id="spinner" class="">
+				<div class="dot-pulse text-danger"></div>
+
+			</div>
+
+
+	</div>
 
 <?php
 
