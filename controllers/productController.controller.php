@@ -121,9 +121,9 @@ class ProductController{
 			#move the picture to the folder on the server
 			#check if there was an error
 			if(move_uploaded_file($this->upload_tmp_name,$this->target_file_dir)){
-				return true;
+				return true.$this->upload_file_error;
 			}else{
-				return false.$this->conn->error;
+				return false.$this->upload_file_error;
 			}
 		}
 	}
