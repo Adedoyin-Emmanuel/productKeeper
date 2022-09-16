@@ -63,12 +63,11 @@ $legit_product_img  = $product->get_product_img();
 
 
 #transfer the file to the permanent location on the server
-$file_transfer_status = $product->upload_file_permanent();
+$product->upload_file_permanent()
 
 #check if there was an error
-echo $file_transfer_status;
-die();
-if($file_transfer_status == false){
+
+if(!$product->upload_file_permanent()){
 	$errors[0] = "*File upload error*";
 	$error_to_user = $errors[0]; 
 	$error_handler->set_error($error_to_user);
