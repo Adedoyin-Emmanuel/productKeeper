@@ -65,7 +65,7 @@ class ProductController{
 	public function handle_file(){
 		$this->upload_file_name = $this->product_img["name"];
 		#reference the file upload folder
-		$this->upload_dir= "../images/";
+		$this->upload_dir= "./images/";
 		#create a file size constant
 		#this is 1mb, the max amount of file size we can accept
 		$this->max_file_size=1000000;
@@ -124,6 +124,7 @@ class ProductController{
 				return true;
 			}else{
 				return false;
+				
 			}
 		}
 	}
