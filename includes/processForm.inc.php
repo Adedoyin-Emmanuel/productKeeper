@@ -68,18 +68,14 @@ $legit_product_img  = $product->get_product_img();
 #check if there was an error
 $upload_check = $product->upload_file_permanent();
 
-
-
+if(!$upload_check){
 
 	$errors[0] = $upload_check;
 	$error_to_user = $errors[0]; 
 	$error_handler->set_error($error_to_user);
 	echo $error_handler->error;
-
 	echo $upload_check;
 	die();
-/*
-if(!$upload_check){
 
 
 
@@ -107,6 +103,6 @@ if(!$upload_check){
 
 
 
-}*/
+}
 
 ?>
