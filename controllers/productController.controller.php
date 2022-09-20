@@ -6,7 +6,6 @@
 #create a product model that would be instanciated
 
 class ProductController{
-	#init the class properties
 	private $product_name;
 	private $product_desc;
 	private $product_img;
@@ -122,12 +121,26 @@ class ProductController{
 		if($this->file_match_success === true){
 			#move the picture to the folder on the server
 			#check if there was an error
-			if(move_uploaded_file($this->upload_tmp_name,$this->target_file_dir)){
-				return "file moved successfuly";
+			
+
+
+			if(is_dir($this->upload_dir)){
+				return "directory exist";
 			}else{
-				return "file not moved successfuly";
+				return "directory does not exist";
+			}
+
+
+			die();
+
+			if(move_uploaded_file($this->upload_tmp_name,$this->target_file_dir)){
+				return true;
+			}else{
+				return false;
 				
 			}
+
+
 		}
 	}
 	#create a method to get the product name

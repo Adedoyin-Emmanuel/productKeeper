@@ -31,7 +31,7 @@ class ConnectionModel extends ProductController{
 		$this->database = 'railway';
 		$this->port 	= 6127;
 		$this->socket   = '';
-		
+
 		#use try catch
 		try {
 			#init the connection property

@@ -66,14 +66,22 @@ $legit_product_img  = $product->get_product_img();
 #$product->upload_file_permanent();
 
 #check if there was an error
-$check_file_permanent_upload = $product->upload_file_permanent();
-if($product->upload_file_permanent()){
-	$errors[0] = $check_file_permanent_upload;
+$upload_check = $product->upload_file_permanent();
+
+
+
+
+	$errors[0] = $upload_check;
 	$error_to_user = $errors[0]; 
 	$error_handler->set_error($error_to_user);
 	echo $error_handler->error;
-	
+	echo $upload_check;
 	die();
+/*
+if(!$upload_check){
+
+
+
 }else{
 	
 	#since file upload was successful, we can insert the data in our DB
@@ -98,6 +106,6 @@ if($product->upload_file_permanent()){
 
 
 
-}
+}*/
 
 ?>
