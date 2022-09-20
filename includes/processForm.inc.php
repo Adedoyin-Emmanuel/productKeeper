@@ -75,6 +75,7 @@ $upload_check = $product->upload_file_permanent();
 	$error_to_user = $errors[0]; 
 	$error_handler->set_error($error_to_user);
 	echo $error_handler->error;
+
 	echo $upload_check;
 	die();
 /*
