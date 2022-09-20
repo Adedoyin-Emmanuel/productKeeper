@@ -70,7 +70,7 @@ $upload_check = $product->upload_file_permanent();
 
 if(!$upload_check){
 
-	$errors[0] = $upload_check;
+	$errors[0] = "file upload error";
 	$error_to_user = $errors[0]; 
 	$error_handler->set_error($error_to_user);
 	echo $error_handler->error;

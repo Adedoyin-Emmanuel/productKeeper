@@ -122,12 +122,6 @@ class ProductController{
 		if($this->file_match_success === true){
 			#move the picture to the folder on the server
 			#check if there was an error
-			if(is_dir("../images")){
-				return true
-			}else{
-				return false;
-				
-			}
 			if(move_uploaded_file($this->upload_tmp_name,$this->target_file_dir)){
 				return true;
 			}else{
