@@ -32,6 +32,13 @@ class ConnectionModel extends ProductController{
 		$this->port 	= 6127;
 		$this->socket   = '';
 
+			// $this->server_name = 'localhost';
+			// $this->user_name = 'root';
+			// $this->password = '';
+			// $this->database = 'crud_app';
+			// $this->port 	= 6127;
+			// $this->socket   = '';
+
 		#use try catch
 		try {
 			#init the connection property
