@@ -42,7 +42,7 @@ if($data_from_database == "Server returned 0 result" OR $data_from_database == "
 									<img src="images/'.$rows["product_img"].'" class="rounded-circle" width="40" height="40">
 										<!-- product text -->
 									<div class="product_test text-capitalize m-auto text-start">
-										<p class="text-capitalize m-auto text-start">'.$trimed_product_name .'</p>
+										<p class="text-capitalize m-auto text-start text-small">'.$trimed_product_name .'</p>
 									</div>
 
 										<div class="time_added d-flex">
