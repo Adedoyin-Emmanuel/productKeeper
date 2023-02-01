@@ -51,7 +51,9 @@ class ProductController{
 			return true;
 		}
 	}
-	#create a method to sanitaize the user inputs
+
+	
+	#create a method to sanitize the user inputs
 	public function sanitize_user_input(){
 		#sanitize the user inputs
 		$this->product_name = $this->custom_input_sanitizer($this->product_name);
@@ -65,7 +67,7 @@ class ProductController{
 	public function handle_file(){
 		$this->upload_file_name = $this->product_img["name"];
 		#reference the file upload folder
-		$this->upload_dir= "../images";
+		$this->upload_dir= "../images/";
 		#create a file size constant
 		#this is 1mb, the max amount of file size we can accept
 		$this->max_file_size=1000000;

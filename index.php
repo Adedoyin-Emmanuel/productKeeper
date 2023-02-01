@@ -14,14 +14,14 @@
 	<title>ProKeep</title>
 </head>
 
-<body class="container-fluid p-0 d-flex align-items-center justify-content-center m-auto flex-column" id="body">
+<body id="landing-page" class="container-fluid p-0 d-flex align-items-center justify-content-center m-auto flex-column" id="body">
 
 	<h4 class="text-capitalize text-center my-5 p-5">welcome to prokeep</h4>
 	<div class="splash_screen my-4 d-flex align-items-center p-3 justify-content-center" >
 	<div class="dot-pulse text-danger d-none" id="pulseSpinner">
 		
 	</div>
-		<img src="shopCart.png" class="img-fluid" height="60" width="60" id="cartImg">
+		<img src="shopCart.png" class="img-fluid my-5" height="60" width="60" id="cartImg">
 
 	</div>
 	<button class="text-capitalize text-center btn btn-danger my-5 " id="getStarted">
@@ -30,10 +30,3 @@
 
 </body>
 </html>
-<?php 
-
-
-
-
-
-?>

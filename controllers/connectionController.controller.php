@@ -25,24 +25,24 @@ class ConnectionModel extends ProductController{
 			parent::__construct($product_name,$product_desc,$product_img);
 		*/
 
-		$this->server_name = 'containers-us-west-27.railway.app';
-		$this->user_name = 'root';
-		$this->password = 'IB5awX5sydMSvqdbeA2a';
-		$this->database = 'railway';
-		$this->port 	= 6127;
-		$this->socket   = '';
+		// $this->server_name = 'containers-us-west-27.railway.app';
+		// $this->user_name = 'root';
+		// $this->password = 'IB5awX5sydMSvqdbeA2a';
+		// $this->database = 'railway';
+		// $this->port 	= 6127;
+		// $this->socket   = '';
 
-			// $this->server_name = 'localhost';
-			// $this->user_name = 'root';
-			// $this->password = '';
-			// $this->database = 'crud_app';
-			// $this->port 	= 6127;
-			// $this->socket   = '';
+			$this->server_name = 'localhost';
+			$this->user_name = 'root';
+			$this->password = 'ea20gt05*(;A';
+			$this->database = 'crud_app';
+			$this->port 	= 6127;
+			$this->socket   = '';
 
 		#use try catch
 		try {
 			#init the connection property
-			$this->conn = new mysqli($this->server_name,$this->user_name,$this->password,$this->database,$this->port);
+			$this->conn = new mysqli($this->server_name,$this->user_name,$this->password,$this->database);
 		} catch (Exception $e) {
 			die("an error occured ".$e->getMessage());
 		}

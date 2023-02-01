@@ -54,6 +54,11 @@
 
 						<!-- data is fetched from the dabase using AJAX -->
 				<!-- end of products  -->
+
+					<div  id="loader" class="d-flex justify-content-center align-items-center text-danger"> 
+						<div class="dot-pulse text-danger"></div>
+
+					</div>
 			</div>
 		</div>
 			<!-- add new product  -->
