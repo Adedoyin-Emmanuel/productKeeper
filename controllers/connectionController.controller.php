@@ -33,11 +33,10 @@ final class ConnectionModel extends ProductController{
 		// $this->socket   = '';
 
 			$this->server_name = 'localhost';
-			$this->user_name = 'root';
-			$this->password = 'ea20gt05*(;A';
-			$this->database = 'crud_app';
-			$this->port 	= 6127;
-			$this->socket   = '';
+			$this->user_name = 'id19384810_adedoyin';
+			$this->password = 'BS%I4cK7[4!\8A6p';
+			$this->database = 'id19384810_test_cbt';
+			
 
 		#use try catch
 		try {
