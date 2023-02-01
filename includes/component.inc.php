@@ -6,16 +6,16 @@
 		<meta name="keyword" content="productkeeper, full stack application, php, php project, php programming, bootstrap project" />
 		<meta name="description" content="A brief summary of the page's content">
 		<meta name="keywords" content="keyword1, keyword2, keyword3">
-		<link rel="canonical" href="https://www.example.com/example-page">
+		<link rel="canonical" href="https://prokeep.up.railway.app/">
 		<meta name="robots" content="index, follow">
-		<meta property="og:title" content="Example Page Title">
-		<meta property="og:description" content="A brief summary of the page's content">
-		<meta property="og:image" content="https://www.example.com/example-image.jpg">
+		<meta property="og:title" content="Product Keeper">
+		<meta property="og:description" content="A fullstack application for storing products">
+		<meta property="og:image" content="https://prokeep.up.railway.app/shopCart.png">
 		<meta property="og:url" content="https://www.example.com/example-page">
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:title" content="Example Page Title">
-		<meta name="twitter:description" content="A brief summary of the page's content">
-		<meta name="twitter:image" content="https://www.example.com/example-image.jpg">
+		<meta name="twitter:title" content="Product Keeper Web Application">
+		<meta name="twitter:description" content="A fullstack application for storing products">
+		<meta name="twitter:image" content="https://prokeep.up.railway.app/shopCart.png">
 		<script src="components/sweetAlert2.js"></script>
 		<script src="components/jquery.js"></script>
 		<script src="components/bootstrap.js"></script>
