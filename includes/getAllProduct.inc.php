@@ -41,7 +41,7 @@ if($data_from_database == "Server returned 0 result" OR $data_from_database == "
 								<div class="product_image d-flex flex-row flex-wrap justify-items-around align-items-center">
 									<img src="images/'.$rows["product_img"].'" class="rounded-circle" width="40" height="40">
 										<!-- product text -->
-									<div class="product_test text-capitalize m-auto text-center">
+									<div class="product_test text-capitalize m-auto text-start">
 										<p class="text-capitalize m-auto text-start">'.$trimed_product_name .'</p>
 									</div>
 
