@@ -9,7 +9,7 @@ error_reporting(0);
 require_once "productController.controller.php";
 
 #create the database connection component class, it performs CRUD operations via the DBase
-class ConnectionModel extends ProductController{
+final class ConnectionModel extends ProductController{
 	protected $server_name;
 	protected $user_name;
 	protected $password;
