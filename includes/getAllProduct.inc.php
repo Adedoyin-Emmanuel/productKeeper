@@ -67,5 +67,3 @@ if($data_from_database == "Server returned 0 result" OR $data_from_database == "
 	}
 
 }
-
-?>
